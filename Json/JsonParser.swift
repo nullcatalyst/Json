@@ -10,8 +10,8 @@ import Foundation
 
 extension Json {
     public typealias UnicodeString = StringType.UnicodeScalarView
-    public static func parse(Json: StringType) -> Json? {
-        let unicodeString = Json.unicodeScalars
+    public static func parse(json: StringType) -> Json? {
+        let unicodeString = json.unicodeScalars
         var index = unicodeString.startIndex
         return parse(unicodeString, index: &index)
     }
@@ -122,6 +122,7 @@ extension Json {
     }
     
     public static func parseString(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+        var result = ""
         var c = contents[index].value
         
         if c == UnicodeScalarValue("\"") {
@@ -136,12 +137,26 @@ extension Json {
                     return nil
                 }
                 
+                if c == UnicodeScalarValue("\\") {
+                    // Get the next character
+                    index = index.successor()
+                    c = contents[index].value
+                    
+                    switch c {
+                        case UnicodeScalarValue("n"):  result += "\n"
+                        case UnicodeScalarValue("t"):  result += "\t"
+                        case UnicodeScalarValue("\\"): result += "\\"
+                        case UnicodeScalarValue("\""): result += "\""
+                        default: result += Character(UnicodeScalar(c))
+                    }
+                } else {
+                    result += Character(UnicodeScalar(c))
+                }
+                
                 // Get the next character
                 index = index.successor()
                 c = contents[index].value
             }
-            
-            let end = index
             
             // Make sure the string ends correctly
             if c == UnicodeScalarValue("\"") {
@@ -151,7 +166,7 @@ extension Json {
                 return nil
             }
             
-            return .String(Swift.String(contents[start..<end]))
+            return .String(result)
         }
         
         return nil
