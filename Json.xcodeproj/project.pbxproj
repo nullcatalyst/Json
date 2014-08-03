@@ -13,6 +13,7 @@
 		D2527032198EA94300B2CB49 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527031198EA94300B2CB49 /* Json.swift */; };
 		D2527034198EAA4500B2CB49 /* JsonLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527033198EAA4500B2CB49 /* JsonLiteral.swift */; };
 		D2527036198EAB8D00B2CB49 /* JsonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527035198EAB8D00B2CB49 /* JsonUtility.swift */; };
+		D2527038198EAC2800B2CB49 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527037198EAC2800B2CB49 /* JsonParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		D2527031198EA94300B2CB49 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		D2527033198EAA4500B2CB49 /* JsonLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLiteral.swift; sourceTree = "<group>"; };
 		D2527035198EAB8D00B2CB49 /* JsonUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonUtility.swift; sourceTree = "<group>"; };
+		D2527037198EAC2800B2CB49 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				D252701A198EA93A00B2CB49 /* Json.h */,
 				D2527031198EA94300B2CB49 /* Json.swift */,
 				D2527033198EAA4500B2CB49 /* JsonLiteral.swift */,
+				D2527037198EAC2800B2CB49 /* JsonParser.swift */,
 				D2527035198EAB8D00B2CB49 /* JsonUtility.swift */,
 				D2527018198EA93A00B2CB49 /* Supporting Files */,
 			);
@@ -221,6 +224,7 @@
 			files = (
 				D2527036198EAB8D00B2CB49 /* JsonUtility.swift in Sources */,
 				D2527032198EA94300B2CB49 /* Json.swift in Sources */,
+				D2527038198EAC2800B2CB49 /* JsonParser.swift in Sources */,
 				D2527034198EAA4500B2CB49 /* JsonLiteral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
