@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20F07C11991CE5400F1E7D2 /* JsonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F07C01991CE5400F1E7D2 /* JsonFile.swift */; };
 		D252701B198EA93A00B2CB49 /* Json.h in Headers */ = {isa = PBXBuildFile; fileRef = D252701A198EA93A00B2CB49 /* Json.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2527021198EA93A00B2CB49 /* Json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2527015198EA93A00B2CB49 /* Json.framework */; };
 		D2527028198EA93A00B2CB49 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527027198EA93A00B2CB49 /* JsonTests.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D20F07C01991CE5400F1E7D2 /* JsonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFile.swift; sourceTree = "<group>"; };
 		D2527015198EA93A00B2CB49 /* Json.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Json.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2527019198EA93A00B2CB49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D252701A198EA93A00B2CB49 /* Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Json.h; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				D252701A198EA93A00B2CB49 /* Json.h */,
 				D2527031198EA94300B2CB49 /* Json.swift */,
+				D20F07C01991CE5400F1E7D2 /* JsonFile.swift */,
 				D2527033198EAA4500B2CB49 /* JsonLiteral.swift */,
 				D2527037198EAC2800B2CB49 /* JsonParser.swift */,
 				D2527035198EAB8D00B2CB49 /* JsonUtility.swift */,
@@ -226,6 +229,7 @@
 				D2527032198EA94300B2CB49 /* Json.swift in Sources */,
 				D2527038198EAC2800B2CB49 /* JsonParser.swift in Sources */,
 				D2527034198EAA4500B2CB49 /* JsonLiteral.swift in Sources */,
+				D20F07C11991CE5400F1E7D2 /* JsonFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +328,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -344,7 +349,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -417,6 +421,7 @@
 				D252702D198EA93A00B2CB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D252702E198EA93A00B2CB49 /* Build configuration list for PBXNativeTarget "JsonTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				D2527030198EA93A00B2CB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

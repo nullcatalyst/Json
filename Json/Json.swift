@@ -10,6 +10,7 @@ import Foundation
 
 public enum Json {
     public typealias BooleanType = Bool
+    public typealias IntegerType = Int
     public typealias NumberType  = Double
     public typealias StringType  = Swift.String
     public typealias ArrayType   = [Json]
@@ -35,6 +36,25 @@ public enum Json {
         set {
             if let value = newValue {
                 self = .Boolean(value)
+            } else {
+                self = .Null
+            }
+        }
+    }
+    
+    public var integer: IntegerType? {
+        get {
+            switch self {
+                case .Number(let value):
+                    return IntegerType(value)
+                    
+                default:
+                    return nil
+            }
+        }
+        set {
+            if let value = newValue {
+                self = .Number(NumberType(value))
             } else {
                 self = .Null
             }

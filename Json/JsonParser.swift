@@ -9,14 +9,16 @@
 import Foundation
 
 extension Json {
-    public typealias UnicodeString = StringType.UnicodeScalarView
+    private typealias UnicodeString = StringType.UnicodeScalarView
+    private typealias UnicodeStringIndex = UnicodeString.Index
+    
     public static func parse(json: StringType) -> Json? {
         let unicodeString = json.unicodeScalars
         var index = unicodeString.startIndex
         return parse(unicodeString, index: &index)
     }
     
-    public static func parse(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parse(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         skipWhitespace(contents, index: &index)
         
         switch contents[index].value {
@@ -42,13 +44,13 @@ extension Json {
         return nil
     }
     
-    private static func skipWhitespace(contents: UnicodeString, inout index: UnicodeString.IndexType) {
+    private static func skipWhitespace(contents: UnicodeString, inout index: UnicodeStringIndex) {
         while isspace(Int32(contents[index].value)) != 0 {
             index = index.successor()
         }
     }
     
-    public static func parseConstant(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parseConstant(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         let start = index
         var c = contents[index].value
         
@@ -78,7 +80,7 @@ extension Json {
         return nil
     }
     
-    public static func parseNumber(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parseNumber(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         var c = contents[index].value
         
         if isnumber(Int32(c)) != 0 || c == UnicodeScalarValue(".") {
@@ -121,7 +123,7 @@ extension Json {
         return nil
     }
     
-    public static func parseString(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parseString(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         var result = ""
         var c = contents[index].value
         
@@ -172,7 +174,7 @@ extension Json {
         return nil
     }
     
-    public static func parseArray(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parseArray(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         var result: [Json] = []
         var c = contents[index].value
         
@@ -226,7 +228,7 @@ extension Json {
         return nil
     }
     
-    public static func parseObject(contents: UnicodeString, inout index: UnicodeString.IndexType) -> Json? {
+    private static func parseObject(contents: UnicodeString, inout index: UnicodeStringIndex) -> Json? {
         var result: [StringType : Json] = [:]
         var c = contents[index].value
         
@@ -281,7 +283,7 @@ extension Json {
         return nil
     }
     
-    static func parseMember(contents: UnicodeString, inout index: UnicodeString.IndexType) -> (StringType, Json)? {
+    private static func parseMember(contents: UnicodeString, inout index: UnicodeStringIndex) -> (StringType, Json)? {
         if let key = parseString(contents, index: &index)?.string {
             
             // Get the next character

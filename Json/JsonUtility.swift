@@ -37,7 +37,7 @@ extension Json: Printable, Equatable {
     }
 }
 
-@infix public func == (a: Json, b: Json) -> Bool {
+public func == (a: Json, b: Json) -> Bool {
     switch (a, b) {
         case (.Null, .Null):
             return true
