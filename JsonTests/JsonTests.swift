@@ -63,5 +63,11 @@ class JsonTests: XCTestCase {
         } else {
             XCTFail("{\"answer\": 42} should have been parsed as a valid object")
         }
+        
+        if let object = Json.parse("{answer: 42, question: \"6 * 9\"}") {
+            XCTAssertEqual(object, ["answer": 42, "question": "6 * 9"], "Assert that the object was parsed correctly")
+        } else {
+            XCTFail("{\"answer\": 42} should have been parsed as a valid object")
+        }
     }
 }

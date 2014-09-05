@@ -149,10 +149,10 @@ extension Json {
                         case UnicodeScalarValue("t"):  result += "\t"
                         case UnicodeScalarValue("\\"): result += "\\"
                         case UnicodeScalarValue("\""): result += "\""
-                        default: result += Character(UnicodeScalar(c))
+                        default: result.append(Character(UnicodeScalar(c)))
                     }
                 } else {
-                    result += Character(UnicodeScalar(c))
+                    result.append(Character(UnicodeScalar(c)))
                 }
                 
                 // Get the next character
@@ -282,9 +282,33 @@ extension Json {
         
         return nil
     }
+
+    private static func parseIdentifier(contents: UnicodeString, inout index: UnicodeStringIndex) -> StringType? {
+        var result = ""
+        var c = contents[index].value
+        
+        if c == UnicodeScalarValue("\"") {
+            if let jsonString = parseString(contents, index: &index)?.string {
+                result = jsonString
+            }
+        } else {
+            while isalpha(Int32(c)) != 0 || c == UnicodeScalarValue("_") {
+                result.append(Character(UnicodeScalar(c)))
+                
+                ++index
+                c = contents[index].value
+            }
+        }
+        
+        if !result.isEmpty {
+            return result
+        } else {
+            return nil
+        }
+    }
     
     private static func parseMember(contents: UnicodeString, inout index: UnicodeStringIndex) -> (StringType, Json)? {
-        if let key = parseString(contents, index: &index)?.string {
+        if let key = parseIdentifier(contents, index: &index) {
             
             // Get the next character
             skipWhitespace(contents, index: &index)

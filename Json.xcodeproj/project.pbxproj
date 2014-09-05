@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D20F07C11991CE5400F1E7D2 /* JsonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F07C01991CE5400F1E7D2 /* JsonFile.swift */; };
-		D252701B198EA93A00B2CB49 /* Json.h in Headers */ = {isa = PBXBuildFile; fileRef = D252701A198EA93A00B2CB49 /* Json.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2527021198EA93A00B2CB49 /* Json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2527015198EA93A00B2CB49 /* Json.framework */; };
 		D2527028198EA93A00B2CB49 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527027198EA93A00B2CB49 /* JsonTests.swift */; };
 		D2527032198EA94300B2CB49 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2527031198EA94300B2CB49 /* Json.swift */; };
@@ -31,7 +30,6 @@
 		D20F07C01991CE5400F1E7D2 /* JsonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFile.swift; sourceTree = "<group>"; };
 		D2527015198EA93A00B2CB49 /* Json.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Json.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2527019198EA93A00B2CB49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D252701A198EA93A00B2CB49 /* Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Json.h; sourceTree = "<group>"; };
 		D2527020198EA93A00B2CB49 /* JsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2527026198EA93A00B2CB49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2527027198EA93A00B2CB49 /* JsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonTests.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 		D2527017198EA93A00B2CB49 /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				D252701A198EA93A00B2CB49 /* Json.h */,
 				D2527031198EA94300B2CB49 /* Json.swift */,
 				D20F07C01991CE5400F1E7D2 /* JsonFile.swift */,
 				D2527033198EAA4500B2CB49 /* JsonLiteral.swift */,
@@ -124,7 +121,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D252701B198EA93A00B2CB49 /* Json.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

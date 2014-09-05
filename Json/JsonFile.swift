@@ -9,7 +9,7 @@
 import Foundation
 
 extension Json {
-    static func parseFile(filename: StringType) -> Json? {
+    public static func parseFile(filename: StringType) -> Json? {
         if let contents = StringType.stringWithContentsOfFile(filename, encoding: NSUTF8StringEncoding, error: nil) {
             return parse(contents)
         } else {
